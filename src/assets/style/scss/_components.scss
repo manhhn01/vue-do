@@ -1,0 +1,116 @@
+// Card
+.card {
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .card-info {
+    color: gray;
+    font-weight: 600;
+  }
+}
+
+// icons
+.icon-sm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1rem !important;
+  height: 1rem !important;
+}
+
+.checkbox-wrapper {
+  position: relative;
+
+  input[type="checkbox"] {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+  }
+  .checkbox {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+
+    &::before {
+      display: block;
+      content: "";
+      widows: 100%;
+      height: 100%;
+      border: 3px solid $text3;
+      border-radius: 50%;
+      transition: border-width 350ms ease;
+      cursor: pointer;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      border: 3px solid white;
+      border: {
+        top: none;
+        right: none;
+      }
+      width: 10px;
+      height: 6px;
+      top: 6px;
+      left: 5px;
+      transform: rotate(-45deg);
+      opacity: 0;
+      transition: opacity 200ms ease;
+    }
+  }
+  input[type="checkbox"]:checked + .checkbox::after {
+    opacity: 1;
+    transition: opacity 350ms 200ms ease;
+  }
+}
+
+//btn
+.btn {
+  cursor: pointer;
+}
+
+// a link btn
+a.btn,
+a.btn:hover,
+a.btn:visited,
+a.btn:active {
+  color: inherit;
+  text-decoration: none;
+  user-select: none;
+}
+
+// input
+input {
+  display: block;
+  height: 2.25rem;
+  color: $text1;
+}
+
+.input-group + .input-group {
+  margin-top: 18px;
+}
+
+//loading icon
+.loader {
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid green;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

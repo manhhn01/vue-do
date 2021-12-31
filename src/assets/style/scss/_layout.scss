@@ -1,0 +1,13 @@
+// Grid
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @for $i from 1 through $cols {
+    .col-#{$i} {
+      display: flex;
+      flex-basis: calc(100 / $cols * $i) * 1%;
+    }
+  }
+}

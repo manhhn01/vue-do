@@ -1,0 +1,134 @@
+// Reset style
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  line-height: 1.5;
+  font-family: $f-family;
+  color: $text1;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+button, button:disabled{
+  border: none;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+// remove animation for people who've turned them off
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+ul {
+  padding: 0;
+}
+
+#app {
+  overflow: auto;
+  height: 100%;
+  padding-top: $header-height;
+}
+
+// Text
+.t-center {
+  text-align: center;
+}
+
+.t-right {
+  text-align: right;
+}
+
+.t-bold {
+  font-weight: bold;
+}
+
+.t-strike {
+  text-decoration: line-through;
+}
+
+// Flex
+.flex {
+  display: flex;
+}
+
+.flex-ac {
+  display: flex;
+  align-items: center;
+}
+
+// Margin
+$directions: ("t" "top", "l" "left", "r" "right", "b" "bottom");
+
+@for $i from 0 through 4 {
+  @each $key, $direct in $directions {
+    .m#{$key}-#{$i*5} {
+      margin-#{$direct}: $i * 5px !important;
+    }
+  }
+}
+
+// Colors
+.red {
+  color: red;
+}
+
+.ps__rail-x,
+.ps__rail-y{
+  z-index: 200;
+}
+
+// transitions
+//    fade
+.fade-enter-active{
+  transition: opacity 300ms ease;
+}
+
+.fade-leave-active {
+  transition: opacity 150ms ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-leave-from,
+.fade-enter-to {
+  opacity: 1;
+}
